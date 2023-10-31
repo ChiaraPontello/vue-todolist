@@ -24,11 +24,16 @@ createApp({
                     id: 4,
                     text: 'Mangiare',
                     done: false
-                }]
-            
+                }
+            ],
+                lastId: 4,
+                todoText:'',
+                filterValue: ''
         }
     },
     methods: {
-
-    }
+        removeTask(i){
+            this.tasks.splice(i, 1)
+        }
+    },
 }).mount('#app');
