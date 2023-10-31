@@ -34,6 +34,20 @@ createApp({
     methods: {
         removeTask(i){
             this.tasks.splice(i, 1)
-        }
+        },
+        addTask(){
+            this.lastId++;
+            const newTask = {
+                id: this.lastId,
+                text: this.todoText,
+                done: false
+            }
+            this.tasks.unshift(newTask);
+            this.todoText = '';
+        },
+        markAsDone(index){
+            this.tasks[index].done = !this.tasks[index].done
+
+        },
     },
 }).mount('#app');

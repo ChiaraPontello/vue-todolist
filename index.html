@@ -16,7 +16,12 @@
             <img src="img/download.png" alt="Pluto">
             
         </header>
+        
         <main>
+            <div class="my-5">
+                <input type="text" class="form-control w-50 d-inline-block mx-3" placeholder="Scrivi ciò che vuoi aggiungere alla lista" v-model="todoText" @keyup.enter="addTask">
+                <button class="btn btn-info align-middle" @click="addTask">Aggiungi</button>
+            </div>
             <ul class="list-group" v-if="tasks.length > 0">
                 <li class="list-group-item list-group-item-action d-flex justify-content-between"
                     v-for="(todo,index) in tasks" :key="todo.id">
@@ -24,12 +29,14 @@
                     <i class="fa-solid fa-shield-dog" style="cursor:pointer" @click="removeTask(todo.index)"></i>
                 </li>
             </ul>
+            
             <div class="text-center" v-else>
                 <h2>
                     <i class="fa-solid fa-paw"></i>
                     Lo hai reso felice!
                     <i class="fa-solid fa-paw"></i>
                 </h2>
+                <img src="img/ciamb.jpg" alt="Ciambella" class="imgciamb">
             </div>
         </main>
     </div>
